@@ -1,0 +1,23 @@
+trigger: none
+
+resources:
+  pipelines:
+  - pipeline: build
+    source: 'Demo Health Check - API - BUILD'
+  
+variables:
+  vmImageName: 'ubuntu-latest'
+  azureSubscription: 'Demo Account'
+
+stages:
+- template: azure-release-pipelines-stage-template.yml
+  parameters:
+    stageName: 'CI'
+    environment: 'API-CI'
+    azureSubscription: ${{ variables.azureSubscription }}
+    functionAppName: 'rutzsco-demo-hc-api-ci'
+    resourceGroupName: 'rutzsco-demo-hc-api-ci'
+    storageAccountName: 'azrdhcapici'
+    region: 'East US'
+    packageName: 'Demo.Api.zip'
+
