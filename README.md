@@ -1,15 +1,18 @@
-# demo-health-checks
+# Service Health Checks Demo
 
-## Liveness Test
+## Liveness Endpoint
 
-## Functional Test
+Endpoint that validates service running and is accessible.
 
-Validates Service is running correctly by validating dependencies 
+## Healtch Check Endpoint
 
-- Sample Dependencies:
+Endpoint that validates service is running correctly by validating dependencies.
+
+Sample Dependencies:
 - Storage
 - Database
-- Services
+- KeyVault
+- Service Dependancies
 
 
 
