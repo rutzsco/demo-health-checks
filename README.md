@@ -67,16 +67,19 @@ public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Func
 
         private static bool ValidateDatabaseConnection()
         {
+            // Health check logic goes here
             return true;
         }
 
         private static bool ValidateKeyVaultConnection()
         {
+            // Health check logic goes here
             return true;
         }
 
         private static bool ValidateServiceConnection()
         {
+            // Health check logic goes here
             return true;
         }
     }
