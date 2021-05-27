@@ -19,7 +19,7 @@ public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Func
 
 ## Health Check Endpoint
 
-Endpoint that validates service is running correctly by validating dependencies. Dependencies checks should be run in background and provided as a cached response from status endpoint.
+Endpoint that validates service is running correctly by validating dependencies. Dependency checks should be run in background and provided as a cached response from status endpoint.
 
 Sample Dependencies:
 - Storage
