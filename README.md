@@ -1,4 +1,4 @@
-# demo-health-checks
+# Service Health Checks Demo
 
 ## Liveness Test
 
