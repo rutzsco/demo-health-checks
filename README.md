@@ -7,15 +7,15 @@ Endpoint that validates service running and is accessible.
 **Example Implementation**
 
 ```csharp
-public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status")] HttpRequest req, ILogger log)
+public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status")] HttpRequest req)
 {
    return new OkObjectResult("OK");
 }
 ```
 
-## Healtch Check Endpoint
+## Health Check Endpoint
 
-Endpoint that validates service is running correctly by validating dependencies.
+Endpoint that validates service is running correctly by validating dependencies. Dependencies checks should be run in background and provided as a cached response from status endpoint.
 
 Sample Dependencies:
 - Storage
@@ -25,6 +25,22 @@ Sample Dependencies:
 
 
 **Example Implementation**
+
+```csharp
+public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status/full")] HttpRequest req)
+{
+    // Get cached health check status
+    var health = HealthCheck.Current();
+    if (!health.IsOK)
+    {
+        var result = new ObjectResult(health);
+        result.StatusCode = 500;
+        return result;
+    }
+            
+    return new OkObjectResult(health);
+}
+```
 
 ```csharp
     public static class HealthCheck
@@ -51,23 +67,24 @@ Sample Dependencies:
 
         private static bool ValidateDatabaseConnection()
         {
+            // Health check logic goes here
             return true;
         }
 
         private static bool ValidateKeyVaultConnection()
         {
+            // Health check logic goes here
             return true;
         }
 
         private static bool ValidateServiceConnection()
         {
+            // Health check logic goes here
             return true;
         }
     }
 ```
 
-```csharp
-TBD
-```
+
 
 
