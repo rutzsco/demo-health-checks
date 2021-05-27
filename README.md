@@ -4,7 +4,7 @@
 
 ## Functional Test
 
-Validates Service is running correctly by validating dependencies.
+Endpoint that validates service is running correctly by validating dependencies.
 
 Sample Dependencies:
 - Storage
