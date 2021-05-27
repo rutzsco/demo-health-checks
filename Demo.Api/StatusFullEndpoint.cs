@@ -14,7 +14,7 @@ namespace Demo.Api
     public static class StatusFullEndpoint
     {
         [FunctionName("StatusFull")]
-        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status/full")] HttpRequest req, ILogger log)
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "status/full")] HttpRequest req, ILogger log)
         {
             // Get cached health check status
             var health = HealthCheck.Current();
