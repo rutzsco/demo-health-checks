@@ -4,6 +4,10 @@
 
 Endpoint that validates service running and is accessible.
 
+**Sample Endpoint**
+
+- https://rutzsco-demo-hc-api-ci.azurewebsites.net/api/status?code=LVnBkshSqxfF1xY0EOC2gkNCpVi2yUw8W3JHGYibhOSxdZib7xq1pg==
+
 **Example Implementation**
 
 ```csharp
@@ -23,6 +27,9 @@ Sample Dependencies:
 - KeyVault
 - Service Dependancies
 
+**Sample Endpoint**
+
+- https://rutzsco-demo-hc-api-ci.azurewebsites.net/api/status/full?code=6HuXwJ6QHpepUqP/5r3R4flb9iRoS9lVFak/srT0H61hNz5pYpkkFg==
 
 **Example Implementation**
 
