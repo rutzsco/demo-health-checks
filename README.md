@@ -1,6 +1,6 @@
 # Service Health Checks Demo
 
-## Liveness Test
+## Liveness Endpoint
 
 Endpoint that validates service running and is accessible.
 
