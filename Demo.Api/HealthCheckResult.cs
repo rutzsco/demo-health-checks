@@ -22,7 +22,7 @@ namespace Demo.Api
 
         public bool IsServiceDependancyOK { get; set; }
 
-        public bool IsOK { get { return IsDatabaseOK && IsKeyVaultOK && IsServiceDependancyOK} }
+        public bool IsOK { get { return IsDatabaseOK && IsKeyVaultOK && IsServiceDependancyOK; } }
 
         public DateTime Updated { get; set; }
 
