@@ -7,7 +7,7 @@ Endpoint that validates service running and is accessible.
 **Example Implementation**
 
 ```csharp
-public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status")] HttpRequest req, ILogger log)
+public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status")] HttpRequest req)
 {
    return new OkObjectResult("OK");
 }
@@ -27,7 +27,7 @@ Sample Dependencies:
 **Example Implementation**
 
 ```csharp
-public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status/full")] HttpRequest req, ILogger log)
+public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status/full")] HttpRequest req)
 {
     // Get cached health check status
     var health = HealthCheck.Current();
