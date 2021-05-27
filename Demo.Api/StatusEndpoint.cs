@@ -13,7 +13,7 @@ namespace Demo.Api
     public static class StatusEndpoint
     {
         [FunctionName("Status")]
-        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "status")] HttpRequest req, ILogger log)
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "status")] HttpRequest req, ILogger log)
         {
             return new OkObjectResult("OK");
         }
